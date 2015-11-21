@@ -1,0 +1,6 @@
+---
+- name: Add unix group webapp
+  group: name=webappgroup state=present
+- name: Add unix user webapp
+  user: name=webapp group=webappgroup
+- copy: src=webapp.upstart.conf dest=/etc/init/webapp.conf 

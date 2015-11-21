@@ -9,7 +9,7 @@
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key`}}",
       "region": "eu-central-1",
-      "source_ami": "ami-accff2b1",
+      "source_ami": "ami-900517fc",
       "instance_type": "t2.micro",
       "ssh_username": "ubuntu",
       "ami_name": "packer {{timestamp}}"
@@ -18,9 +18,14 @@
 
   "provisioners": [
     {
-      "type": "shell",
-      "script": "setup_things.sh"
+        "type": "shell",
+	"inline": ["sudo apt-get install ansible -y"]
+    },
+    {
+	"type": "ansible-local",
+	"playbook_dir": ".",
+	"playbook_file": "webapp-vm.yml"
     }
-  ]
+    ]
 }
 

@@ -8,11 +8,9 @@
       key_name: webserver_key
       region: eu-central-1
       instance_type: t2.micro
-      image: ami-afecfec3
+      image: ami-6292800e
       wait: yes
       group: webservers
-#      vpc_subnet_id: subnet-ae2ab3c7
-#      assign_public_ip: yes
     register: ec2
   - name: Add all instance public IPs to host group for later use
     add_host: hostname={{ item.public_ip }} groups=ec2hosts ansible_ssh_user=ubuntu ansible_ssh_private_key_file=../infrastructure/id_rsa
@@ -30,7 +28,7 @@
   gather_facts: true
   tasks:
   - name: copy jar to server
-    copy: src=../webapp/target/spring-boot-hello-world-1.0-SNAPSHOT.jar dest=/opt/webapp.jar
+    copy: src=../webapp/target/webapp-1.0-SNAPSHOT.jar dest=/opt/webapp.jar
   - name: Start webapp service
     service: name=webapp state=restarted 
   - name: Wait until webapp listens on port 8080

@@ -1,1 +1,0 @@
-test 		ansible_ssh_host=52.29.100.167  ansible_ssh_user=ubuntu ansible_ssh_private_key_file=../infrastructure/id_rsa

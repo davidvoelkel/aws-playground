@@ -8,7 +8,7 @@
       key_name: webserver_key
       region: eu-central-1
       instance_type: t2.micro
-      image: ami-6292800e
+      image: "{{ ami }}" 
       wait: yes
       group: webservers
     register: ec2
@@ -22,7 +22,7 @@
     local_action: command sh -c 'ssh-keyscan -t rsa {{ item.public_ip }} >> $HOME/.ssh/known_hosts'
     with_items: ec2.instances
 - hosts: ec2hosts
-  name: configuration play
+  name: Deploy & start jar-file
   user: ubuntu 
   sudo: true
   gather_facts: true

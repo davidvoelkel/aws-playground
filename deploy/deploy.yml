@@ -11,8 +11,8 @@
       image: ami-afecfec3
       wait: yes
       group: webservers
-      vpc_subnet_id: subnet-ae2ab3c7
-      assign_public_ip: yes
+#      vpc_subnet_id: subnet-ae2ab3c7
+#      assign_public_ip: yes
     register: ec2
   - name: Add all instance public IPs to host group for later use
     add_host: hostname={{ item.public_ip }} groups=ec2hosts ansible_ssh_user=ubuntu ansible_ssh_private_key_file=../infrastructure/id_rsa

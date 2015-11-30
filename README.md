@@ -20,7 +20,7 @@ I recommend you download the current versions of the tools directly put them e.g
 
 ## Other Material
 * Check the [video](https://youtu.be/AiAOLpshguM) showing the usage of the scripts. 
-* Check the [slides]() of the related XP Days Germany 2015 Session ["Infrastructure as Code" for Beginners](http://www.xpdays.de/2015/sessions/088-infrastructure-as-code-fuer-anfaenger.html)    
+* Check the [slides](http://de.slideshare.net/davidvoelkel/infrastructure-as-code-for-beginners) of the related XP Days Germany 2015 Session ["Infrastructure as Code" for Beginners](http://www.xpdays.de/2015/sessions/088-infrastructure-as-code-fuer-anfaenger.html)    
 
 ## Disclaimer
 I guarantee for nothing but please as a PR if I can improve this documentation. For the ease of use I had put an SSH private key into the demo, so in case you want to build up further, please change the keys from the example and don't check in the private key into a public repository. 
